@@ -1,6 +1,6 @@
-FROM ubuntu:latest
+FROM tomcat:9.0.80-jdk17-corretto-al2
 EXPOSE 3000
-ENV APP_HOME /usr/src/app
+RUN pwd
+RUN ll
 COPY target\web.app-1.0-SNAPSHOT.jar /usr/src/app
-WORKDIR $APP_HOME
-ENTRYPOINT exec java -jar app.jar
+ENTRYPOINT exec java -jar web.app-1.0-SNAPSHOT.jar
